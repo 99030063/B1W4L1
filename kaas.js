@@ -1,13 +1,6 @@
-// array vraag0="Is de kaas Geel?"
-// array vraag1="Zitten er gaten in?"
-// array vraag2="Heeft de kaas blauwe schimmels"
-// array vraag3="Is de kaas belachelijk duur?"
-// array vraag4="Is de kaas hard als steen?"
-// array vraag5="Heeft de kaas een korst?"
-// array vraag6="Heeft de kaas een korst?"
-
 
 //na alle objecten binnen array moeten komma
+
 //array van vragen
 var vragen = [{
     vraag:"Is de kaas Geel?",
@@ -29,20 +22,20 @@ var vragen = [{
 },
 {
     vraag:"Is de kaas belachelijk duur?",
-    nextIfYes:null,
-    nextIfNo:null,
+    nextIfYes:'Emmenthaler',
+    nextIfNo:'Leerdammer',
     cheesetype:null,
 },
 {
     vraag:"Is de kaas hard als steen?",
-    nextIfYes:null,
-    nextIfNo:null,
+    nextIfYes:'Parmigiano Reqqiano',
+    nextIfNo:'Goudse kaas',
     cheesetype:null,
 },
 {
     vraag:"Heeft de kaas een korst?",
-    nextIfYes:null,
-    nextIfNo:null,
+    nextIfYes:'Bleu de Rochbaron',
+    nextIfNo:'Foume dAmbert',
     cheesetype:null,
 },
 {
@@ -53,21 +46,37 @@ var vragen = [{
 }
 ]
 
-var vraag = document.getElementById("vraag")
-vraag.innerHTML = (vragen[0][vraag]);
+var vraag = document.getElementById("vraag");
+vraag.innerHTML = (vragen[0]['vraag']);
 var neeKnop=document.getElementById('nee');
 var jaKnop=document.getElementById('ja');
 
+
 function answerQuestion(questionNo, answer){
-    if(answer==true){
-        vraag.innerHTML = vragen[vragen[questionNo]['nextIfYes']]['vraag'];
-        jaKnop.setAttribute('onclick',[answerQuestion(questionNo, true)]);
-        neeKnop.setAttribute('onclick',[answerQuestion(questionNo, false)]);
-    }else{
-        vraag.innerHTML = vragen[vragen[questionNo]['nextIfNo']]['vraag'];
-        jaKnop.setAttribute('onclick',[answerQuestion(questionNo, true)]);
-        neeKnop.setAttribute('onclick',[answerQuestion(questionNo, false)]);
+    if(vragen[cheesetype=null]){
+        if(answer==true){
+            vraag.innerHTML = vragen[vragen[questionNo]['nextIfYes']]['vraag']
+            jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] +', true)')
+            neeKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] + ', false)')
+        }else{
+            vraag.innerHTML = vragen[vragen[questionNo]['nextIfNo']]['vraag']
+            jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfNo'] + ', true)')
+            neeKnop.setAttribute('onclick','answerQuestion(' + vragen[questionNo]['nextIfNo'] +', false)')
+        }
+    }else if(vragen[cheesetype!=null]){
+        document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar" + vragen[vragen[questionNo][cheesetype]]
+        
     }
+    
+    // if(answer==true){
+    //     vraag.innerHTML = vragen[vragen[questionNo]['nextIfYes']]['vraag']
+    //     jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] +', true)')
+    //     neeKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] + ', false)')
+    // }else{
+    //     vraag.innerHTML = vragen[vragen[questionNo]['nextIfNo']]['vraag']
+    //     jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfNo'] + ', true)')
+    //     neeKnop.setAttribute('onclick','answerQuestion(' + vragen[questionNo]['nextIfNo'] +', false)')
+    // }
 }
 
 
