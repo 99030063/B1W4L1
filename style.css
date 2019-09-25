@@ -11,4 +11,13 @@ body{
     background-image: url('kaas.png');
     background-repeat: repeat-y;
     background-size:cover;
+    font-size: 65px;
+    font-family: 'JI Swiss Cheese';
+    font-style: italic;
+}
+
+button{
+    font-size: 65px;
+    font-family: 'JI Swiss Cheese';
+    font-style: italic;
 }
