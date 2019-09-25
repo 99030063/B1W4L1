@@ -22,28 +22,76 @@ var vragen = [{
 },
 {
     vraag:"Is de kaas belachelijk duur?",
-    nextIfYes:'Emmenthaler',
-    nextIfNo:'Leerdammer',
+    nextIfYes:'7',
+    nextIfNo:'8',
     cheesetype:null,
 },
 {
     vraag:"Is de kaas hard als steen?",
-    nextIfYes:'Parmigiano Reqqiano',
-    nextIfNo:'Goudse kaas',
+    nextIfYes:'9',
+    nextIfNo:'10',
     cheesetype:null,
 },
 {
     vraag:"Heeft de kaas een korst?",
-    nextIfYes:'Bleu de Rochbaron',
-    nextIfNo:'Foume dAmbert',
+    nextIfYes:'11',
+    nextIfNo:'12',
     cheesetype:null,
 },
 {
     vraag:"Heeft de kaas een korst?",
+    nextIfYes:'13',
+    nextIfNo:'14',
+    cheesetype:null,
+},
+{
+    vraag:null,
     nextIfYes:null,
     nextIfNo:null,
-    cheesetype:null,
-}
+    cheesetype:'Emmenthaler'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Leerdammer'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Parmigianio Reggiano'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Goudse kaas'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Bleu de Rochbaron'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:"Foume d'Ambert"
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Camembert'
+},
+{
+    vraag:null,
+    nextIfYes:null,
+    nextIfNo:null,
+    cheesetype:'Mozzarella'
+},
 ]
 
 var vraag = document.getElementById("vraag");
@@ -53,7 +101,7 @@ var jaKnop=document.getElementById('ja');
 
 
 function answerQuestion(questionNo, answer){
-    if(vragen[cheesetype=null]){
+    if(vragen[questionNo]['cheesetype']==null){
         if(answer==true){
             vraag.innerHTML = vragen[vragen[questionNo]['nextIfYes']]['vraag']
             jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] +', true)')
@@ -63,8 +111,9 @@ function answerQuestion(questionNo, answer){
             jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfNo'] + ', true)')
             neeKnop.setAttribute('onclick','answerQuestion(' + vragen[questionNo]['nextIfNo'] +', false)')
         }
-    }else if(vragen[cheesetype!=null]){
-        document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar" + vragen[vragen[questionNo][cheesetype]]
+    }else if(vragen[questionNo]['cheesetype']!=null){
+        console.log(questionNo)
+        document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar " + vragen[questionNo]['cheesetype']
         
     }
     
@@ -82,7 +131,7 @@ function answerQuestion(questionNo, answer){
 
 
 
-
+// = is wordt en == is is
 
 
 
