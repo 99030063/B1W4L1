@@ -21,3 +21,8 @@ button{
     font-family: 'JI Swiss Cheese';
     font-style: italic;
 }
+span{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
