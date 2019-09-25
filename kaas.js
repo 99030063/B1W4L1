@@ -10,7 +10,8 @@ function answerQuestion(questionNo, answer){
             jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] +', true)')
             neeKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfYes'] + ', false)')
         }else{
-            document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar " + vragen[vragen[questionNo]['nextIfYes']]['cheesetype']
+            document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar " + "<strong>"+vragen[vragen[questionNo]['nextIfYes']]['cheesetype']+"</strong>";
+            document.getElementById("response").remove();
         }
     }else{
         if(vragen[vragen[questionNo]['nextIfNo']]['cheesetype']==null){
@@ -18,7 +19,10 @@ function answerQuestion(questionNo, answer){
             jaKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfNo'] +', true)')
             neeKnop.setAttribute('onclick','answerQuestion('+ vragen[questionNo]['nextIfNo'] + ', false)')
         }else{
-            document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar " + vragen[vragen[questionNo]['nextIfNo']]['cheesetype']
+            document.getElementById("antwoord").innerHTML = "U bent waarschijnlijk op zoek naar " + "<strong>"+vragen[vragen[questionNo]['nextIfNo']]['cheesetype']+"</strong>";
+            document.getElementById("response").remove();
+           
         }
-    }
+    } 
+
 }

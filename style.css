@@ -1,8 +1,14 @@
-.response{
+#response{
     text-align: center;
     margin: 0 auto;
 }
 p{
     margin: auto;
     text-align: center;
+}
+body{
+    background-color:rgb(255, 167, 4);
+    background-image: url('kaas.png');
+    background-repeat: repeat-y;
+    background-size:cover;
 }
