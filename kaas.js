@@ -27,3 +27,11 @@ function answerQuestion(questionNo, answer){
     } 
 
 }
+
+//knop 1.setattribute
+//fucntion restart()
+//knop 1 onclick zichtbaar
+//knop 2 onclick zichtbaar
+//kaasantwoord weg
+//vraag resetten
+//restartknop weg
