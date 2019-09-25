@@ -80,7 +80,7 @@ function answerQuestion(questionNo, answer){
 }
 
 
-c
+
 
 
 
